@@ -1,6 +1,6 @@
 ﻿namespace PokerApp
 {
-    class GerenciamentoDasCartas
+    class Regras
     {
         public enum Mao
         {
