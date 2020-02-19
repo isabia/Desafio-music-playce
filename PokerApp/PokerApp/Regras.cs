@@ -20,7 +20,7 @@
             public int MaiorCarta { get; set; }
         }
 
-        class MaoAvaliador : Carta
+        public class MaoAvaliador : Carta
         {
             private int _somaDeCopas;
             private int _somaDeOuros;
@@ -98,8 +98,8 @@
 
             private bool FourOfKind()
             {
-          
-              
+
+
                 if (Cartas[0].ValorUsado == Cartas[1].ValorUsado && Cartas[0].ValorUsado == Cartas[2].ValorUsado && Cartas[0].ValorUsado == Cartas[3].ValorUsado)
                 {
                     _maoValor.Total = (int)Cartas[1].ValorUsado * 4;
@@ -118,7 +118,7 @@
 
             private bool FullHouse()
             {
-               
+
                 if ((Cartas[0].ValorUsado == Cartas[1].ValorUsado && Cartas[0].ValorUsado == Cartas[2].ValorUsado && Cartas[3].ValorUsado == Cartas[4].ValorUsado) ||
                     (Cartas[0].ValorUsado == Cartas[1].ValorUsado && Cartas[2].ValorUsado == Cartas[3].ValorUsado && Cartas[2].ValorUsado == Cartas[4].ValorUsado))
                 {
@@ -132,7 +132,7 @@
 
             private bool Flush()
             {
-                
+
                 if (_somaDeCopas == 5 || _somaDeOuros == 5 || _somaDePaus == 5 || _somaDeEspadas == 5)
                 {
                     _maoValor.Total = (int)Cartas[4].ValorUsado;
@@ -158,7 +158,7 @@
 
             private bool ThreeOfKind()
             {
-              
+
                 if ((Cartas[0].ValorUsado == Cartas[1].ValorUsado && Cartas[0].ValorUsado == Cartas[2].ValorUsado) ||
                 (Cartas[1].ValorUsado == Cartas[2].ValorUsado && Cartas[1].ValorUsado == Cartas[3].ValorUsado))
                 {
@@ -177,7 +177,7 @@
 
             private bool TwoPairs()
             {
-                
+
                 if (Cartas[0].ValorUsado == Cartas[1].ValorUsado && Cartas[2].ValorUsado == Cartas[3].ValorUsado)
                 {
                     _maoValor.Total = ((int)Cartas[1].ValorUsado * 2) + ((int)Cartas[3].ValorUsado * 2);
@@ -228,6 +228,7 @@
                 }
 
                 return false;
-        }   }
+            }
+        }
     }
 }
