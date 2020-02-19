@@ -1,0 +1,11 @@
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\bin\Debug\netcoreapp3.1\PokerApp.exe
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\bin\Debug\netcoreapp3.1\PokerApp.deps.json
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\bin\Debug\netcoreapp3.1\PokerApp.runtimeconfig.json
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\bin\Debug\netcoreapp3.1\PokerApp.runtimeconfig.dev.json
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\bin\Debug\netcoreapp3.1\PokerApp.dll
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\bin\Debug\netcoreapp3.1\PokerApp.pdb
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\obj\Debug\netcoreapp3.1\PokerApp.AssemblyInfoInputs.cache
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\obj\Debug\netcoreapp3.1\PokerApp.AssemblyInfo.cs
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\obj\Debug\netcoreapp3.1\PokerApp.dll
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\obj\Debug\netcoreapp3.1\PokerApp.pdb
+C:\Users\isabe\Desafio-music-playce\PokerApp\PokerApp\obj\Debug\netcoreapp3.1\PokerApp.csprojAssemblyReference.cache

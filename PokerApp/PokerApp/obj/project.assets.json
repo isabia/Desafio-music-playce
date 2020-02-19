@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\isabe\\source\\repos\\PokerApp\\PokerApp\\PokerApp.csproj",
+      "projectUniqueName": "C:\\Users\\isabe\\Desafio-music-playce\\PokerApp\\PokerApp\\PokerApp.csproj",
       "projectName": "PokerApp",
-      "projectPath": "C:\\Users\\isabe\\source\\repos\\PokerApp\\PokerApp\\PokerApp.csproj",
+      "projectPath": "C:\\Users\\isabe\\Desafio-music-playce\\PokerApp\\PokerApp\\PokerApp.csproj",
       "packagesPath": "C:\\Users\\isabe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\isabe\\source\\repos\\PokerApp\\PokerApp\\obj\\",
+      "outputPath": "C:\\Users\\isabe\\Desafio-music-playce\\PokerApp\\PokerApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\isabe\\AppData\\Roaming\\NuGet\\NuGet.Config",
