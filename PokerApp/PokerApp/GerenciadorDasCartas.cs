@@ -132,7 +132,7 @@ namespace PokerApp
             }
         }
         public bool ValidacaoEntrada(String input)
-        {
+        {   
             if (input.Contains('.'))  return false; 
             if (input.Contains(','))  return false; 
             if (input.Contains(':'))  return false; 
@@ -141,34 +141,34 @@ namespace PokerApp
 
         public void evaluateMaos()
         {
-            MaoAvaliador mao1Avaliador = new MaoAvaliador(cartasNaMao1);
-            MaoAvaliador mao2Avaliador = new MaoAvaliador(cartasNaMao2);
+            AvaliadorDaMao mao1Avaliador = new AvaliadorDaMao(cartasNaMao1);
+            AvaliadorDaMao mao2Avaliador = new AvaliadorDaMao(cartasNaMao2);
 
-            Mao mao1 = mao1Avaliador.EvaluateMao();
-            Mao mao2 = mao2Avaliador.EvaluateMao();
+            Mao mao1 = mao1Avaliador.AvalieMao();
+            Mao mao2 = mao2Avaliador.AvalieMao();
 
                 Console.WriteLine("\n\n\n\n\nJogador 1: " + mao1);
                 Console.WriteLine("\nJogador 2: " + mao2);
 
             if (mao1 > mao2)
             {
-                Console.WriteLine("Jogador 1 venceu! ┏( ͡❛ ͜ʖ ͡❛)┛");
+                Console.WriteLine("Jogador 1 venceu! ┏(;))┛");
             }
             else if (mao1 < mao2)
             {
-                Console.WriteLine("Jogador 2 venceu! ┏( ͡❛ ͜ʖ ͡❛)┛");
+                Console.WriteLine("Jogador 2 venceu! ┏( ͡;))┛");
             }
             else
             {
 
-                if (mao1Avaliador.MaoValores.Total > mao2Avaliador.MaoValores.Total)
-                    Console.WriteLine("Jogador 1 venceu! ┏( ͡❛ ͜ʖ ͡❛)┛");
-                else if (mao1Avaliador.MaoValores.Total < mao2Avaliador.MaoValores.Total)
-                    Console.WriteLine("Jogador 2 venceu! ┏( ͡❛ ͜ʖ ͡❛)┛");
-                else if (mao1Avaliador.MaoValores.MaiorCarta > mao2Avaliador.MaoValores.MaiorCarta)
-                    Console.WriteLine("Jogador 1 venceu! ┏( ͡❛ ͜ʖ ͡❛)┛");
-                else if (mao1Avaliador.MaoValores.MaiorCarta < mao2Avaliador.MaoValores.MaiorCarta)
-                    Console.WriteLine("Jogador 2 venceu! ┏( ͡❛ ͜ʖ ͡❛)┛");
+                if (mao1Avaliador.ValoresDaMao.Total > mao2Avaliador.ValoresDaMao.Total)
+                    Console.WriteLine("Jogador 1 venceu! ┏( ͡;))┛");
+                else if (mao1Avaliador.ValoresDaMao.Total < mao2Avaliador.ValoresDaMao.Total)
+                    Console.WriteLine("Jogador 2 venceu! ┏( ͡;) )┛");
+                else if (mao1Avaliador.ValoresDaMao.MaiorCarta > mao2Avaliador.ValoresDaMao.MaiorCarta)
+                    Console.WriteLine("Jogador 1 venceu! ┏( ͡;))┛");
+                else if (mao1Avaliador.ValoresDaMao.MaiorCarta < mao2Avaliador.ValoresDaMao.MaiorCarta)
+                    Console.WriteLine("Jogador 2 venceu! ┏( ͡;))┛");
                 else
                     Console.WriteLine("Ninguém ganhou");
             }
