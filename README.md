@@ -14,7 +14,7 @@ duas mãos vence.
 
 Fiz o programa seguindo o exemplo da imagem porque não conheço o jogo:
 
-[Regras](Screenshots/RodarProjetoPNG.PNG)
+[Regras](Screenshots/Regras.PNG)
 
 Importante ressaltar que não consegui fazer uma regra para quando as Cartas inseridas formam um Royal Straight Flush.
 
