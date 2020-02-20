@@ -10,6 +10,14 @@ mão de poker com 5 cartas (por exemplo "2P,4E,5E,2O,KC" significa 2 de paus, 4 
 5 de espadas, 2 de ouro e o rei de copas) e o programa deve retornar qual das
 duas mãos vence.
 ```
+## Regras
+
+Fiz o programa seguindo o exemplo da imagem porque não conheço o jogo:
+
+[Regras](Screenshots/RodarProjetoPNG.PNG)
+
+Importante ressaltar que não consegui fazer uma regra para quando as Cartas inseridas formam um Royal Straight Flush.
+
 # Por que c#?
 
 Escolhi a linguagem que tenho mais familiaridade, como deixaram o desafio livre pensei muito sobre qual caminho seguir. Comecei um APP com flutter, mas vi que como a entrada era String achei melhor uma aplicação console.
