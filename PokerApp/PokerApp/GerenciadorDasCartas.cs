@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using static PokerApp.Regras;
 
 namespace PokerApp
@@ -8,14 +9,16 @@ namespace PokerApp
  
             const int QUANTIDADE_DE_CARTAS_PARTIDA = 5;
 
-            private Carta[] Mao1;
-            private Carta[] Mao2;
+            private Carta[] cartasNaMao1;
+            private Carta[] cartasNaMao2;
+            Valor enumValor;
+            Naipe enumNaipe;
 
 
             public GerenciadorDasCartas()
             {
-                Mao1 = new Carta[QUANTIDADE_DE_CARTAS_PARTIDA];
-                Mao2 = new Carta[QUANTIDADE_DE_CARTAS_PARTIDA];
+                cartasNaMao1 = new Carta[QUANTIDADE_DE_CARTAS_PARTIDA];
+                cartasNaMao2 = new Carta[QUANTIDADE_DE_CARTAS_PARTIDA];
             }
 
             public void Deal()
@@ -28,10 +31,10 @@ namespace PokerApp
             public void getMao()
             {
                 for (int i = 0; i < 5; i++)
-                    Mao1[i] = getBaralho[i];
+                cartasNaMao1[i] = getBaralho[i];
 
                 for (int i = 5; i < 10; i++)
-                    Mao2[i - 5] = getBaralho[i];
+                cartasNaMao2[i - 5] = getBaralho[i];
             }
 
             public void LeCartas()
@@ -44,6 +47,28 @@ namespace PokerApp
 
                 String mao1 = String.Empty;
                 mao1 = Console.ReadLine();
+            if (!this.ValidacaoEntrada(mao1))
+            {
+                Console.WriteLine("A entrada não pode conter caracteres especiais");
+            }
+                List<string> temporario = new List<string>();
+                temporario.AddRange(mao1.Split(';'));
+                if(mao1.Length <5 || mao1.Length > 5)
+                {
+                    Console.WriteLine("A entrada não pode conter mais de 5 cartas");
+                }
+                temporario.ForEach((x) => {
+                var stringformatada = x.Trim().ToUpper();
+                List<Carta> carta = new List<Carta>();
+                if (stringformatada.Length == 2) {
+                        var valorString = stringformatada.Substring(0, 1);
+                        var naipeString = stringformatada.Substring(1, 2);
+                        int.Parse(valorString);
+                        //Enum.GetValues(Valor);
+                        //carta.Add(Valor);
+                        
+                }                              
+                });
 
                 Console.ForegroundColor = ConsoleColor.DarkRed;
                 
@@ -53,18 +78,36 @@ namespace PokerApp
 
                 String mao2 = String.Empty;
                 mao1 = Console.ReadLine();
+                if (!this.ValidacaoEntrada(mao2))
+                {
+                    Console.WriteLine("A entrada não pode conter caracteres especiais");
+                }
+                 List<string> temporario2 = new List<string>();
+                temporario2.AddRange(mao2.Split(';'));
+                if (mao2.Length < 5 || mao2.Length > 5)
+                {
+                    Console.WriteLine("A entrada não pode conter mais de 5 cartas");
+                }
             }
 
-            public void evaluateMaos()
-            {
-            MaoAvaliador mao1Avaliador = new MaoAvaliador(Mao1);
-            MaoAvaliador mao2Avaliador = new MaoAvaliador(Mao2);
+        public bool ValidacaoEntrada(String input)
+        {
+            if (input.Contains('.'))  return false; 
+            if (input.Contains(','))  return false; 
+            if (input.Contains(':'))  return false; 
+            return true;
+        }
+
+        public void evaluateMaos()
+        {
+            MaoAvaliador mao1Avaliador = new MaoAvaliador(cartasNaMao1);
+            MaoAvaliador mao2Avaliador = new MaoAvaliador(cartasNaMao2);
 
             Mao mao1 = mao1Avaliador.EvaluateMao();
             Mao mao2 = mao2Avaliador.EvaluateMao();
 
-                Console.WriteLine("\n\n\n\n\nJogador 1: " + Mao1);
-                Console.WriteLine("\nJogador 2: " + Mao2);
+                Console.WriteLine("\n\n\n\n\nJogador 1: " + mao1);
+                Console.WriteLine("\nJogador 2: " + mao2);
 
             if (mao1 > mao2)
             {

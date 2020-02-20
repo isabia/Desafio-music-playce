@@ -35,8 +35,8 @@
                 _somaDeOuros = 0;
                 _somaDePaus = 0;
                 _somaDeEspadas = 0;
-                Cartas = new Carta[5];
-                Cartas = maoRecebida;
+                _cartas = new Carta[5];
+                _cartas = maoRecebida;
                 _maoValor = new MaoValor();
             }
 
