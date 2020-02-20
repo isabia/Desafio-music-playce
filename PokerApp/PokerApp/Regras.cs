@@ -1,4 +1,6 @@
-﻿namespace PokerApp
+﻿using System;
+
+namespace PokerApp
 {
     class Regras
     {
@@ -84,22 +86,32 @@
 
                 private void getNumeroDeNaipes()
                 {
-                    foreach (var element in cartas)
+                    try
                     {
-                        if (element.NaipeUsado == Carta.Naipe.C)
-                            somaDeCopas++;
-                        else if (element.NaipeUsado == Carta.Naipe.O)
-                            somaDeOuros++;
-                        else if (element.NaipeUsado == Carta.Naipe.P)
-                            somaDePaus++;
-                        else if (element.NaipeUsado == Carta.Naipe.E)
-                            somaDeEspada++;
+                        foreach (var element in cartas)
+                        {
+                            if (element.NaipeUsado == Carta.Naipe.C)
+                                somaDeCopas++;
+                            else if (element.NaipeUsado == Carta.Naipe.O)
+                                somaDeOuros++;
+                            else if (element.NaipeUsado == Carta.Naipe.P)
+                                somaDePaus++;
+                            else if (element.NaipeUsado == Carta.Naipe.E)
+                                somaDeEspada++;
+                        }
+                }
+                    catch(NullReferenceException e)
+                    {
+                        e = new NullReferenceException("Sua entrada é inválida");    
+                        Console.WriteLine(e);
                     }
                 }
 
                 private bool FourOfKind()
                 {
-                    
+
+                try
+                {
                     if (cartas[0].ValorUsado == cartas[1].ValorUsado && cartas[0].ValorUsado == cartas[2].ValorUsado && cartas[0].ValorUsado == cartas[3].ValorUsado)
                     {
                         valorDaMao.Total = (int)cartas[1].ValorUsado * 4;
@@ -112,13 +124,19 @@
                         valorDaMao.MaiorCarta = (int)cartas[0].ValorUsado;
                         return true;
                     }
+                }catch(Exception e)
+                {
+                    e = new Exception("Formato inválido");
+                    Console.WriteLine(e.Message);
+                }
 
                     return false;
                 }
 
                 private bool FullHouse()
                 {
-                    
+                try
+                {
                     if ((cartas[0].ValorUsado == cartas[1].ValorUsado && cartas[0].ValorUsado == cartas[2].ValorUsado && cartas[3].ValorUsado == cartas[4].ValorUsado) ||
                         (cartas[0].ValorUsado == cartas[1].ValorUsado && cartas[2].ValorUsado == cartas[3].ValorUsado && cartas[2].ValorUsado == cartas[4].ValorUsado))
                     {
@@ -126,42 +144,63 @@
                             (int)(cartas[3].ValorUsado) + (int)(cartas[4].ValorUsado);
                         return true;
                     }
+                }
+                catch (Exception e)
+                {
+                    e = new Exception("Formato inválido");
+                    Console.WriteLine(e.Message);
+                }
 
-                    return false;
+                return false;
                 }
 
                 private bool Flush()
                 {
-                    
+                try
+                {
                     if (somaDeCopas == 5 || somaDeOuros == 5 || somaDePaus == 5 || somaDeEspada == 5)
                     {
-                        
+
                         valorDaMao.Total = (int)cartas[4].ValorUsado;
                         return true;
                     }
+                }
+                catch (Exception e)
+                {
+                    e = new Exception("Formato inválido");
+                    Console.WriteLine(e.Message);
+                }
 
-                    return false;
+                return false;
                 }
 
                 private bool Straight()
                 {
-                   
+                try
+                {
                     if (cartas[0].ValorUsado + 1 == cartas[1].ValorUsado &&
                         cartas[1].ValorUsado + 1 == cartas[2].ValorUsado &&
                         cartas[2].ValorUsado + 1 == cartas[3].ValorUsado &&
                         cartas[3].ValorUsado + 1 == cartas[4].ValorUsado)
                     {
-                        
+
                         valorDaMao.Total = (int)cartas[4].ValorUsado;
                         return true;
                     }
+                }
+                catch (Exception e)
+                {
+                    e = new Exception("Formato inválido");
+                    Console.WriteLine(e.Message);
+                }
 
-                    return false;
+                return false;
                 }
 
                 private bool ThreeOfKind()
                 {
-                    
+                try
+                {
                     if ((cartas[0].ValorUsado == cartas[1].ValorUsado && cartas[0].ValorUsado == cartas[2].ValorUsado) ||
                     (cartas[1].ValorUsado == cartas[2].ValorUsado && cartas[1].ValorUsado == cartas[3].ValorUsado))
                     {
@@ -175,12 +214,20 @@
                         valorDaMao.MaiorCarta = (int)cartas[1].ValorUsado;
                         return true;
                     }
-                    return false;
+                }
+                catch (Exception e)
+                {
+                    e = new Exception("Formato inválido");
+                    Console.WriteLine(e.Message);
+                }
+
+                return false;
                 }
 
                 private bool TwoPairs()
                 {
-                   
+                try
+                {
                     if (cartas[0].ValorUsado == cartas[1].ValorUsado && cartas[2].ValorUsado == cartas[3].ValorUsado)
                     {
                         valorDaMao.Total = ((int)cartas[1].ValorUsado * 2) + ((int)cartas[3].ValorUsado * 2);
@@ -199,12 +246,19 @@
                         valorDaMao.MaiorCarta = (int)cartas[0].ValorUsado;
                         return true;
                     }
-                    return false;
+                }
+                catch (Exception e)
+                {
+                    e = new Exception("Formato inválido");
+                    Console.WriteLine(e.Message);
+                }
+                return false;
                 }
 
                 private bool OnePair()
                 {
-                    
+                try
+                {
                     if (cartas[0].ValorUsado == cartas[1].ValorUsado)
                     {
                         valorDaMao.Total = (int)cartas[0].ValorUsado * 2;
@@ -229,8 +283,13 @@
                         valorDaMao.MaiorCarta = (int)cartas[2].ValorUsado;
                         return true;
                     }
-
-                    return false;
+                }
+                catch (Exception e)
+                {
+                    e = new Exception("Formato inválido");
+                    Console.WriteLine(e.Message);
+                }
+                return false;
                 }
 
             }

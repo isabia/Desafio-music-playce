@@ -80,56 +80,83 @@ namespace PokerApp
 
         public void ValidacaoDeTamanho(List<String> lista)
         {
-            if (lista.Count < 5 || lista.Count > 5)
+            try
             {
-                Console.WriteLine("A entrada não pode conter mais de 5 cartas");
+                if (lista.Count < 5 || lista.Count > 5)
+                {
+                    throw new System.ArgumentException("Cartas inseridas são inválidas");
+                }
+            }
+            catch (ArgumentException e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
         public Carta converteToCarta(String stringformatada)
         {
             string valorString = String.Empty;
             string naipeString = String.Empty;
+            Carta carta = new Carta();
             int valor = 0;
 
-            if(stringformatada.Length == 2)
+            try
             {
-                valorString = stringformatada.Remove(1);
-                naipeString = stringformatada.Substring(1, 1);
-                valor = int.Parse(valorString);
+                if (stringformatada.Length == 2)
+                {
+                    valorString = stringformatada.Remove(1);
+                    naipeString = stringformatada.Substring(1, 1);
+                    valor = int.Parse(valorString);
+                }
+                else if (stringformatada.Length == 3)
+                {
+                    valorString = stringformatada.Substring(0, 2);
+                    naipeString = stringformatada.Substring(2, 1);
+                    valor = int.Parse(valorString);
+                }
+                else if (stringformatada.Length > 3 || stringformatada.Length <= 0)
+                {
+                    throw new System.ArgumentException("Carta inserida é inválida: " + stringformatada);
+                }
+
+                carta = new Carta { NaipeUsado = this.StringToEnum(naipeString), ValorUsado = (Valor)valor };
             }
-            else if(stringformatada.Length == 3)
-            { 
-                valorString = stringformatada.Substring(0, 1);
-                naipeString = stringformatada.Substring(1, 2);
-                valor = int.Parse(valorString);
-            }
-            else if(stringformatada.Length > 3 || stringformatada.Length <= 0)
+            catch (ArgumentException e)
             {
-                Console.WriteLine("Cartas inseridas não são válidas");
+                Console.WriteLine(e.Message);
+            }
+            catch (FormatException formatException)
+            {
+                formatException = new FormatException("Formato não aceito");
+                Console.WriteLine(formatException.Message);
             }
 
-            return new Carta { NaipeUsado = this.StringToEnum(naipeString), ValorUsado = (Valor)valor };
+            return carta;
         }
 
         public Naipe StringToEnum(String naipe)
         {
-            switch (naipe)
+            try
             {
-                case "C":
-                    return Naipe.C;
-                    break;
-                case "O":
-                    return Naipe.O;
-                    break;
-                case "E":
-                    return Naipe.E;
-                    break;
-                case "P":
-                    return Naipe.P;
-                default:
-                    return Naipe.C;
-                    break;
+                switch (naipe)
+                {
+                    case "C":
+                        return Naipe.C;
+                    case "O":
+                        return Naipe.O;
+                    case "E":
+                        return Naipe.E;
+                    case "P":
+                        return Naipe.P;
+                    default:
+                        throw new System.ArgumentException("Naipe inserido é inválido: " + naipe);
+                        
+                }
             }
+            catch (ArgumentException e) {
+                Console.WriteLine(e.Message);
+            }
+            
+            return Naipe.C;
         }
         public bool ValidacaoEntrada(String input)
         {   
