@@ -1,57 +1,49 @@
-# Desafio music playce
-
-O desafio que eu escolhi foi:
+# MusicPlayce challenge
 
 ## Poker
 
 ```
-O programa deve receber 2 entradas de texto: cada uma é uma representação de uma
-mão de poker com 5 cartas (por exemplo "2P,4E,5E,2O,KC" significa 2 de paus, 4 e 
-5 de espadas, 2 de ouro e o rei de copas) e o programa deve retornar qual das
-duas mãos vence.
+The program must receive 2 text entries: each one is a representation of a
+5 card poker hand (for example "2P, 4E, 5E, 2O, KC" means 2 of clubs, 4 and
+5 of spades, 2 of gold and the king of hearts) and the program must return which
+two hands wins.
 ```
-## Regras
+## Rules
 
-Fiz o programa seguindo o exemplo da imagem porque não conheço o jogo:
+[Rules](Screenshots/Regras.PNG)
 
-[Regras](Screenshots/Regras.PNG)
+# Running the project
 
-Importante ressaltar que não consegui fazer uma regra para quando as Cartas inseridas formam um Royal Straight Flush.
-
-# Por que c#?
-
-Escolhi a linguagem que tenho mais familiaridade, como deixaram o desafio livre pensei muito sobre qual caminho seguir. Comecei um APP com flutter, mas vi que como a entrada era String achei melhor uma aplicação console.
-
-# Guia para abrir o projeto
-
-Eu aconselho rodar no Visual Studio Code 2019 escolhendo a opção de configuração para desktop, mas também da para usar o vs code deixo o link abaixo de como rodar o projeto:
+I advise running in Visual Studio Code 2019 choosing the configuration option for desktop, but also to use vs code I leave the link below on how to run the project:
 
 [Docs microsoft](https://docs.microsoft.com/pt-br/dotnet/core/tutorials/with-visual-studio-code)
 
-### No Visual Studio
+### In Visual Studio
 
-Quando abrir o Visual Studio depois de clonar o projeto. Clique em Abrir projeto ou solução.
+When to open Visual Studio after cloning the project. Click Open project or solution.
 
-[Abrir solução](Screenshots/AbrirProjeto.PNG)
+[Open solution](Screenshots/AbrirProjeto.PNG)
 
-No explorador de arquivos selecionar o projeto do tipo *.sln*
+In the file explorer select the project of type *.sln*
 
-[Selecionar solução](Screenshots/Solution.PNG)
+[](Screenshots/Solution.PNG)
 
-Depois de o Projeto aberto clique no projeto e defina como Startup project ou projato de inicialização.
+After the Project is open click on the project and set it as Startup project or startup project.
 
 [Startup project](Screenshots/GerenciadorDeSolucao.PNG)
 
-Após isso pode colocar o projeto para rodar
+Run the project
 
-[Rodar projeto](Screenshots/RodarProjetoPNG.PNG)
+[Run project](Screenshots/RodarProjetoPNG.PNG)
 
 
-## Feito com
+## Requiremets
+
+### Built in
 
 * [.NET Core 3.1](https://docs.microsoft.com/pt-br/dotnet/core/) - Framework usado
 * [C# 8](https://docs.microsoft.com/pt-br/dotnet/csharp/) - Linguagem usada
 
-## Autores
+## Author
 
-* **Isabella Beatriz da Silva** - *ISabia * - [Perfil git](https://github.com/isabia)
+* **Isabella Beatriz da Silva** - *Isabia * - [Perfil git](https://github.com/isabia)
